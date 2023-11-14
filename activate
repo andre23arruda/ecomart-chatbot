@@ -1,0 +1,14 @@
+#!/bin/bash
+# run with `. activate`
+PWD=`pwd`
+
+activate () {
+        conda activate ./venv
+
+        printf "\033[42m"
+        printf "### Virtual enviroment activated ###\n"
+        printf '\033[0m'
+        printf "Use 'conda deactivate' to close it. \n"
+}
+
+activate

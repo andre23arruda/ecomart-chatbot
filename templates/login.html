@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{% static 'img/icone-chatbot.svg' %}" type="image/x-icon">
+        <title>EcoMart - Login</title>
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    </head>
+
+    <body>
+        <header class="cabecalho container">
+            <img src="{% static 'img/logo-chatbot.svg' %}" alt="Logo Chatbot">
+        </header>
+
+        <main class="login-main">
+            <form method="POST">
+                <section class="login container">
+                    <h1 class="login__h1">Faça seu login</h1>
+
+                    {% csrf_token %}
+
+                    <input
+                        type="text"
+                        class="input login__input"
+                        placeholder="Nome de usuário"
+                        name="username"
+                        required
+                    >
+
+                    <input
+                        type="password"
+                        class="input login__input"
+                        placeholder="********"
+                        name="password"
+                        required
+                    >
+
+                    <button
+                        class="login__submit"
+                        type="submit"
+                    >
+                        Enviar
+                    </button>
+                </section>
+            </form>
+        </main>
+    </body>
+</html>

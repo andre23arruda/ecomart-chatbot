@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="{% static 'img/icone-chatbot.svg' %}" type="image/x-icon">
+        <title>EcoMart - Chat</title>
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    </head>
+
+    <body>
+        <header class="cabecalho container">
+            <img src="{% static 'img/logo-chatbot.svg' %}" alt="Logo Chatbot">
+
+            <div class="header_actions">
+                <a href="/clear" id="clear-history">Limpar Conversa</a>
+                <a href="{% url 'logout'%}">Sair</a>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="chat container" id="chat">
+                <p class="chat__bubble chat__bubble--bot">
+                    Olá! Eu sou o assistente virtual da <b>EcoMart</b>.
+                    <br /><br />
+                    Como posso te ajudar?
+                </p>
+            </section>
+
+            <section class="input__section container">
+                <form class="input__container">
+                    <input
+                        autocomplete="off"
+                        aria-autocomplete="none"
+                        class="input"
+                        id="input-prompt"
+                        name="prompt"
+                        placeholder="Enviar uma mensagem"
+                        type="text"
+                    >
+
+                    <button type="submit" aria-label="Botão de enviar" id="button-submit">
+                        <i class="icon icon-submit"></i>
+                    </button>
+                </form>
+            </section>
+        </main>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{% static 'js/index.js' %}"></script>
+    </body>
+</html>
